@@ -1,3 +1,67 @@
 # Bitcoin Core Web Scraper
 
-Mirroring the Bitcoin Core bin folder: https://bitcoincore.org/bin
+A script for web scraping and downloading the [BitCoin Core `bin`](https://bitcoincore.org/bin) directory.  
+Ideal for creating your own mirror!
+
+## Usage
+
+### Dependencies
+
+Run-time dependency:
+
+* Python3 + pip (`python3 python3-dev python3-pip`)
+* Additional libs for Scrapy (`libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev`)
+
+More packages will be downloaded via `pip`, see next section.
+
+### Prepare
+
+I advice you to use a [Python virtual environment](https://docs.python.org/3/library/venv.html#), create & activate such an environment via:
+
+```sh
+python3 -m venv env
+source env/bin/activate
+```
+
+Next, install the required packages via:
+
+```sh
+pip install -r requirements.txt
+```
+
+### Run scraper
+
+Execute scraper and **start downloading**:
+
+```sh
+scrapy crawl bitcoincore
+```
+
+*Note:* Files are stored within the `bin` sub-folder of the root-folder of this project (at the moment).
+
+Optionally, execute scraper and output the meta-data to a "feed" file (eg. JSON file):
+
+```sh
+scrapy crawl bitcoincore -O bitcoincore.json
+```
+
+## Learn & Debug
+
+You can use the Scrapy shell to help debugging or learn how to extract data:
+
+```sh
+scrapy shell 'https://bitcoincore.org/bin/'
+```
+
+Now, check the `response` object for data, just an example:
+
+```sh
+response.css('pre a')[3].get()
+```
+
+## External Links
+
+More info:
+
+* [Scrapy homepage](https://scrapy.org)
+* [Scrapy Tutorial docs](https://docs.scrapy.org/en/latest/intro/tutorial.html) (ideal for beginners)
