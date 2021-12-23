@@ -26,4 +26,7 @@ class BitcoinCoreSpider(scrapy.Spider):
                 elif link.startswith("bitcoin-") or link.startswith("SHA256SUMS"):
                     # Ready to download those files, by adding the url to the files_urls item field
                     downloadItem['file_urls'].append(response.urljoin(link))
-            yield downloadItem
+
+            # Only yield when we actually filled-in file_urls
+            if not len(downloadItem['file_urls']) == 0:
+                yield downloadItem
