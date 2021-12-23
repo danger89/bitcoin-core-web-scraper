@@ -13,7 +13,6 @@ BOT_NAME = 'bitcoinscraper'
 SPIDER_MODULES = ['bitcoinscraper.spiders']
 NEWSPIDER_MODULE = 'bitcoinscraper.spiders'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mirror scraper for Bitcoin Core (+https://bitcoin.melroy.org)'
 

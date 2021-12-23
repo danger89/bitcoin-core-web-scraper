@@ -37,7 +37,9 @@ Execute scraper and **start downloading**:
 scrapy crawl bitcoincore
 ```
 
-*Note:* Files are stored within the `bin` sub-folder of the root-folder of this project (at the moment).
+Or by running: `./start_spider.py`
+
+*Note:* Files are stored within the `bin` sub-folder of the root-folder of this project.
 
 Optionally, execute scraper and output the meta-data to a "feed" file (eg. JSON file):
 
@@ -45,27 +47,31 @@ Optionally, execute scraper and output the meta-data to a "feed" file (eg. JSON 
 scrapy crawl bitcoincore -O bitcoincore.json
 ```
 
-## Build Docker image
+## Docker Image
 
-*Note:* Docker Image is [available on DockerHub](https://hub.docker.com/r/danger89/bitcoinscraper).
+The Docker image is [available on DockerHub](https://hub.docker.com/r/danger89/bitcoinscraper).
 
-Run:
+*Note:* The Docker Image will start the scrawler using a cronjob, so the bitcoin spider runs automatically once a week.
+
+I provided a [docker-compose file](bitcoinscraper-compose.yml) for convenience.
+
+**Building Docker image**
+
+Create a Docker image locally using:
 
 ```sh
 docker build -t danger89/bitcoinscraper .
 ```
 
-I also provided a [docker-compose file](bitcoinscraper-compose.yml).
-
 ## Learn & Debug
 
-You can use the Scrapy shell to help debugging or learn how to extract data:
+You can use the Scrapy shell to help debugging or learn how to extract data when using `scrapy`:
 
 ```sh
 scrapy shell 'https://bitcoincore.org/bin/'
 ```
 
-Now, check the `response` object for data, just an example:
+Check the `response` object for data, just an example:
 
 ```py
 response.css('pre a')[3].get()
