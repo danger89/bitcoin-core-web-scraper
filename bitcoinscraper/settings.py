@@ -32,11 +32,16 @@ DOWNLOAD_DELAY = 0.4
 CONCURRENT_REQUESTS_PER_DOMAIN = 12
 #CONCURRENT_REQUESTS_PER_IP = 16
 
+# Adapt download settings
+DOWNLOAD_TIMEOUT = 1200
+DOWNLOAD_MAXSIZE = 0
+DOWNLOAD_WARNSIZE = 0
+
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
+TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
