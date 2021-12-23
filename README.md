@@ -45,6 +45,18 @@ Optionally, execute scraper and output the meta-data to a "feed" file (eg. JSON 
 scrapy crawl bitcoincore -O bitcoincore.json
 ```
 
+## Build Docker image
+
+*Note:* Docker Image is [available on DockerHub](https://hub.docker.com/r/danger89/bitcoinscraper) .
+
+Run:
+
+```sh
+docker build -t danger89/bitcoinscraper .
+```
+
+I also provided a [docker-compose file](bitcoinscraper-compose.yml).
+
 ## Learn & Debug
 
 You can use the Scrapy shell to help debugging or learn how to extract data:

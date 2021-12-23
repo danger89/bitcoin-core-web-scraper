@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  bitcoinscraper:
+    image: danger89/bitcoinscraper:latest
+    container_name: bitcoin_scraper
+    volumes:
+      - ./bin:/usr/src/app/bin
+    restart: always
