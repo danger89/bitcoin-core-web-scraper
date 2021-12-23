@@ -55,7 +55,7 @@ scrapy shell 'https://bitcoincore.org/bin/'
 
 Now, check the `response` object for data, just an example:
 
-```sh
+```py
 response.css('pre a')[3].get()
 ```
 
