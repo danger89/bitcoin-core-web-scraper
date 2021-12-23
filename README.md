@@ -1,6 +1,6 @@
 # Bitcoin Core Web Scraper
 
-A script for web scraping and downloading the [BitCoin Core `bin`](https://bitcoincore.org/bin) directory.  
+A script for web scraping and downloading the [Bitcoin Core `bin`](https://bitcoincore.org/bin) directory.  
 Ideal for creating your own mirror!
 
 ## Usage
@@ -47,7 +47,7 @@ scrapy crawl bitcoincore -O bitcoincore.json
 
 ## Build Docker image
 
-*Note:* Docker Image is [available on DockerHub](https://hub.docker.com/r/danger89/bitcoinscraper) .
+*Note:* Docker Image is [available on DockerHub](https://hub.docker.com/r/danger89/bitcoinscraper).
 
 Run:
 
@@ -77,3 +77,4 @@ More info:
 
 * [Scrapy homepage](https://scrapy.org)
 * [Scrapy Tutorial docs](https://docs.scrapy.org/en/latest/intro/tutorial.html) (ideal for beginners)
+* [APScheduler Cron docs](https://apscheduler.readthedocs.io/en/3.x/modules/triggers/cron.html)
